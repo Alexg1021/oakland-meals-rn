@@ -2,13 +2,12 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 const GridTile = props => {
-  console.log(props);
   return (
     <View style={styles.gridItems}>
       <TouchableOpacity style={{ flex: 1 }} onPress={props.onSelect}>
         <View
           style={{ ...styles.container, ...{ backgroundColor: props.colors } }}>
-          <Text>{props.title}</Text>
+          <Text style={styles.title}>{props.title}</Text>
         </View>
       </TouchableOpacity>
     </View>
@@ -21,7 +20,8 @@ const styles = StyleSheet.create({
     margin: 15,
     height: 150,
     borderRadius: 10,
-    overflow: 'hidden',
+    elevation: 5,
+    // overflow: 'hidden',
   },
   container: {
     flex: 1,
@@ -34,6 +34,11 @@ const styles = StyleSheet.create({
     padding: 15,
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
+  },
+  title: {
+    fontSize: 22,
+    color: '#333',
+    textAlign: 'right',
   },
 });
 
